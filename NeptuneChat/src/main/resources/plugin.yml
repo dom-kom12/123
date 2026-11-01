@@ -1,0 +1,68 @@
+name: NeptuneChat
+version: '2.4.0'
+main: com.neptune.chat.NeptuneChat
+api-version: '1.21'
+author: Neptune
+description: Advanced chat moderation system with backend and local persistence
+softdepend:
+  - LuckPerms
+  - PlaceholderAPI
+
+commands:
+  mute:
+    description: Wycisz gracza
+    usage: /mute <gracz> <czas> [powód]
+    permission: neptune.chat.mute
+  unmute:
+    description: Odcisz gracza
+    usage: /unmute <gracz>
+    permission: neptune.chat.unmute
+  warn:
+    description: Ostrzeż gracza
+    usage: /warn <gracz> [powód]
+    permission: neptune.chat.warn
+  warnings:
+    description: Ostrzeżenia gracza
+    usage: /warnings <gracz> [strona|clear]
+    permission: neptune.chat.warnings
+  chat:
+    description: Zarządzanie czatem
+    usage: /chat <clear|lock|unlock|status|color|slowmode|broadcast|info|reload|help|ban|unban|kick|stats|note|tag|seen|playtime>
+    permission: neptune.chat.admin
+  neptune:
+    description: Główna komenda pluginu
+    usage: /nc <reload|status|sync|db>
+    aliases: [nc, neptunechat]
+    permission: neptune.chat.admin
+  history:
+    description: Historia gracza
+    usage: /history <gracz> [mute|warn|all]
+    permission: neptune.chat.history
+
+permissions:
+  neptune.chat.mute:
+    default: op
+  neptune.chat.unmute:
+    default: op
+  neptune.chat.warn:
+    default: op
+  neptune.chat.warnings:
+    default: op
+  neptune.chat.history:
+    default: op
+  neptune.chat.admin:
+    default: op
+  neptune.chat.bypass.filter:
+    default: op
+  neptune.chat.bypass.caps:
+    default: op
+  neptune.chat.bypass.antispam:
+    default: op
+  neptune.chat.bypass.lock:
+    default: op
+  neptune.chat.bypass.slowmode:
+    default: op
+  neptune.chat.bypass.antilink:
+    default: op
+  neptune.chat.bypass.vpn:
+    default: op
