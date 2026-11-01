@@ -1,0 +1,110 @@
+# ============================================
+# NeptuneChat Configuration v2.4
+# ============================================
+
+backend:
+  enabled: true
+  url: "wss://panel.nebula-mc.dedyn.io/ws-plugin"
+  server-id: "srv_1966f6c7"
+  token: "90124d1550e653479c0b9bb288fd8f069ac60351852bafd624b102c62063d378"
+  token-env: "NEPTUNE_TOKEN"
+  token-in-auth: true
+  send-rate-limit: 50
+  max-queue-size: 10000
+
+caps:
+  enabled: true
+  convert-to-lowercase: true
+  min-message-length: 5
+  minimum-uppercase-percentage: 60
+  warning-limit: 2
+  mute-duration: "20m"
+
+antispam:
+  enabled: true
+  max-messages: 5
+  time-window-seconds: 5
+  duplicate-detection: true
+  short-message-threshold: 3
+
+antilink:
+  enabled: true
+  block-urls: true
+  block-ips: true
+  whitelist:
+    - "nebula-mc.dedyn.io"
+    - "discord.gg/nebula"
+
+antivpn:
+  enabled: false
+  api: "ip-api"
+  api-key: ""
+  kick-message: "&cVPN/Proxy wykryty! Wyłącz VPN i połącz ponownie."
+  cache-minutes: 60
+  check-on-join: true
+
+anticaps:
+  strip-invisible: true
+  strip-spoofing: true
+
+autoresponder:
+  enabled: false
+  triggers:
+    "jak wbic":
+      response: "&eIP: &fplay.nebula-mc.dedyn.io"
+      cooldown-seconds: 30
+    "discord":
+      response: "&eDiscord: &fdiscord.gg/nebula"
+      cooldown-seconds: 30
+
+filter:
+  enabled: true
+  default-action: REPLACE
+  words: []
+
+chat:
+  lock-default: false
+  clear-lines: 100
+  slowmode-seconds: 0
+  auto-mute-after-warns: 3
+  auto-mute-duration: "1h"
+  local-radius: 0
+  mention-sound: true
+
+automessages:
+  enabled: true
+  interval-seconds: 300
+  messages:
+    - "&7[&bNeptune&7] &fWelcome to the server!"
+    - "&7[&bNeptune&7] &fJoin our Discord: discord.gg/example"
+  join-messages:
+    default: "&7[&a+&7] &f{player}"
+    vip: "&7[&a+&7] &6[VIP] &f{player}"
+    admin: "&7[&a+&7] &c[ADMIN] &f{player}"
+  quit-messages:
+    default: "&7[&c-&7] &f{player}"
+    vip: "&7[&c-&7] &6[VIP] &f{player}"
+    admin: "&7[&c-&7] &c[ADMIN] &f{player}"
+
+colors:
+  hex-only: false
+  show-preview: true
+
+metrics: true
+
+messages:
+  prefix: "&7[&bNeptune&7] &r"
+  no-permission: "&cNie masz uprawnień."
+  player-not-found: "&cGracz nie jest online."
+  invalid-time: "&cNieprawidłowy czas. Dozwolone: 10s, 30s, 1m, 5m, 20m, 1h, 1d, perm"
+  muted: "&cZostałeś wyciszony!\n&ePowód: &f{reason}\n&ePozostały czas: &f{time}"
+  warned: "&cOtrzymałeś ostrzeżenie!\n&ePowód: &f{reason}"
+  chat-locked: "&cCzat jest zablokowany! &7Pozostały czas: &e{time}"
+  chat-unlocked: "&aCzat został odblokowany."
+  chat-cleared: "&aCzat wyczyszczony."
+  antilink-blocked: "&cNie wysyłaj linków ani adresów IP!"
+  slowmode: "&cZwolnij! Poczekaj jeszcze {time}."
+  auto-mute-warn: "&cZostałeś automatycznie wyciszony za {count} ostrzeżeń."
+  vpn-kick: "&cVPN/Proxy wykryty! Wyłącz VPN i połącz ponownie."
+  banned: "&cZostałeś zbanowany!\n&ePowód: &f{reason}"
+  kicked: "&cZostałeś wyrzucony!\n&ePowód: &f{reason}"
